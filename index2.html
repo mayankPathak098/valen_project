@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALENTINE</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="box">
+        <div class="box2">
+        <div class="pfp"> </div>
+
+        <div class="writeup">
+            <h1>Will You Be My VALENTINE??</h1>
+        </div>
+
+        </div>
+
+        <div class="bbox">
+            <div class="box3">
+
+        <div class="yes-no1">
+            <a href="#" onclick="return false;"><h1> yes</h1></a>
+
+        </div>
+
+        </div>
+
+        <div class="box4">
+        <div class="yes-no2">
+            <h4>no</h4>
+        </div>
+        </div>
+        
+        </div>
+
+    <div id="gifBox" style="display: none; text-align: center;">
+    <h1>Thank You 💖</h1>
+    <img src="love.gif" width="300">
+</div>
+
+
+
+
+    <script>
+    const yes = document.querySelector(".box3");
+    const no = document.querySelector(".box4");
+    const gif = document.getElementById("gifBox");
+    const buttons = document.querySelector(".bbox");
+
+    function showGif() {
+        buttons.style.display = "none";
+        gif.style.display = "block";
+    }
+
+    yes.onclick = showGif;
+    no.onclick = showGif;
+</script>
+
+<script>
+    const noBtn = document.querySelector(".box4");
+    const box = document.querySelector(".box");
+
+    noBtn.addEventListener("mouseenter", () => {
+        const boxRect = box.getBoundingClientRect();
+
+        const maxX = boxRect.width - noBtn.offsetWidth;
+        const maxY = boxRect.height - noBtn.offsetHeight;
+
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
+
+        noBtn.style.position = "absolute";
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
+</script>
+
+    
+</body>
+</html>
